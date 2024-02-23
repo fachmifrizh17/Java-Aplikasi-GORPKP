@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lap.penyewa" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a2b265b3-9b49-4ec8-821e-bc20933106db">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="penyewa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     penyewa.`id_penyewa` AS penyewa_id_penyewa,
+     penyewa.`nama` AS penyewa_nama,
+     penyewa.`telefon` AS penyewa_telefon,
+     penyewa.`alamat` AS penyewa_alamat
+FROM
+     `penyewa` penyewa
+where
+id_penyewa LIKE '%$P!{penyewa}%']]>
+	</queryString>
+	<field name="penyewa_id_penyewa" class="java.lang.String"/>
+	<field name="penyewa_nama" class="java.lang.String"/>
+	<field name="penyewa_telefon" class="java.lang.String"/>
+	<field name="penyewa_alamat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="168" y="43" width="244" height="20" uuid="fa31f64b-dd44-458a-bd1b-afd245519325"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13730]]></text>
+			</staticText>
+			<line>
+				<reportElement x="126" y="29" width="316" height="1" uuid="41428db7-6191-4ec7-b76e-2a13958cef73"/>
+			</line>
+			<image>
+				<reportElement x="442" y="-10" width="113" height="91" uuid="533a656e-6d2c-4c0d-8a0e-99d5963b3b28"/>
+				<imageExpression><![CDATA["C:\\Users\\Fachmi Farizh\\Documents\\NetBeansProjects\\GorPKP\\report\\logo-dki-jakarta-1.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="91" width="555" height="1" uuid="290aecf6-c249-454b-b705-a7c0b0791e8f"/>
+			</line>
+			<staticText>
+				<reportElement x="234" y="53" width="125" height="20" uuid="5328514c-8339-42cf-9a3b-e92112050abd"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Telepon: (021) 87704066]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="31" width="301" height="20" uuid="6fe4f580-1bf2-452c-bf62-000ff3a41a1d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Pkp No.48, RT.1/RW.8, Klp. Dua Wetan, Kec. Ciracas, Kota]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="95" width="555" height="1" uuid="1fa78982-082d-4036-82f1-82ccf9329406"/>
+			</line>
+			<staticText>
+				<reportElement x="121" y="1" width="326" height="29" uuid="4aa84f90-88f2-4ba8-af6c-2eb1a80d4d71"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[GELANGGANG REMAJA PKP]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="0" width="189" height="20" uuid="c71bc971-d757-4394-a9cc-6a4398ad2ac2"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENYEWA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="16" width="100" height="20" uuid="91d7377c-0f81-4181-b5ba-e710c80a8c3a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PENYEWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="16" width="100" height="20" uuid="d5f2901d-4ce2-4e7e-a15f-e53218b4cbf1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA LENGKAP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="16" width="100" height="20" uuid="6062bbd9-6275-4b34-8471-796553988eab"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMOR TELEPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="16" width="100" height="20" uuid="134cdaa2-61e5-4147-9808-c2c88312a042"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="76" y="15" width="400" height="1" uuid="86c63f25-071b-4677-8982-deaf328fab81"/>
+			</line>
+			<line>
+				<reportElement x="76" y="36" width="400" height="1" uuid="7dcc1807-97e9-495a-8726-08e20d064413"/>
+			</line>
+			<line>
+				<reportElement x="76" y="59" width="400" height="1" uuid="8dc2a874-b51e-418c-900d-caac0eddffa9"/>
+			</line>
+			<textField>
+				<reportElement x="76" y="36" width="100" height="20" uuid="e3e280cb-8f55-4d75-ae56-b4da60070c6b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{penyewa_id_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="36" width="100" height="20" uuid="513a35b4-400c-45c6-9609-7a5d2a2c1993"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{penyewa_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="36" width="103" height="20" uuid="59c7cd53-f261-4859-aa00-5e159b496226"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{penyewa_telefon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="37" width="100" height="20" uuid="30d4529a-39c5-4e7b-9fec-33dbc8410ea2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{penyewa_alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="401" y="93" width="107" height="20" uuid="eb9ea6d9-8e2c-443b-a98e-5278d7cdf50d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[(..........SURYA..........)]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="419" y="10" width="100" height="20" uuid="8fa94c53-3a63-47db-b7ef-ec67a10cb070"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="407" y="23" width="100" height="20" uuid="b5b2ad8e-2a2b-4956-98e5-9cb81a954576"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Admin GOR PKP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="10" width="100" height="20" uuid="288e6af1-c1d7-424f-a4ae-409510ff8095"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

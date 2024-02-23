@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lap.pembatalan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13d91ea6-6143-4322-8f2a-a73642ff309f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="batal" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     pembatalan.`id_pembatalan` AS pembatalan_id_pembatalan,
+     pembatalan.`idpemesanan` AS pembatalan_idpemesanan,
+     pembatalan.`karyawan` AS pembatalan_karyawan,
+     pembatalan.`nama_penyewa` AS pembatalan_nama_penyewa,
+     pembatalan.`telefon` AS pembatalan_telefon,
+     pembatalan.`fasilitas` AS pembatalan_fasilitas,
+     pembatalan.`keterangan` AS pembatalan_keterangan
+FROM
+     `pembatalan` pembatalan
+where
+idpemesanan LIKE '%$P!{batal}%']]>
+	</queryString>
+	<field name="pembatalan_id_pembatalan" class="java.lang.String"/>
+	<field name="pembatalan_idpemesanan" class="java.lang.String"/>
+	<field name="pembatalan_karyawan" class="java.lang.String"/>
+	<field name="pembatalan_nama_penyewa" class="java.lang.String"/>
+	<field name="pembatalan_telefon" class="java.lang.String"/>
+	<field name="pembatalan_fasilitas" class="java.lang.String"/>
+	<field name="pembatalan_keterangan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="121" y="1" width="326" height="29" uuid="b3154bca-9d34-4228-bbca-7394f21ab9ee"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[GELANGGANG REMAJA PKP]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="91" width="555" height="1" uuid="0cb51cb7-5a61-46ea-a6d8-1509a55f3b65"/>
+			</line>
+			<staticText>
+				<reportElement x="168" y="43" width="244" height="20" uuid="c2f14c6b-e4fe-4f6d-b80e-7d9f1a16cc82"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13730]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="31" width="301" height="20" uuid="86ebde95-15a6-4390-aca2-d9a4d596702f"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Pkp No.48, RT.1/RW.8, Klp. Dua Wetan, Kec. Ciracas, Kota]]></text>
+			</staticText>
+			<line>
+				<reportElement x="126" y="29" width="316" height="1" uuid="f74c237a-7ab4-4410-8f6c-05522c80f68e"/>
+			</line>
+			<staticText>
+				<reportElement x="234" y="53" width="125" height="20" uuid="1b296a8c-a220-4e2d-a2a2-5c23fa94f436"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Telepon: (021) 87704066]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="95" width="555" height="1" uuid="d503822d-a507-4dd7-9473-75bb844a2a0b"/>
+			</line>
+			<image>
+				<reportElement x="442" y="-10" width="113" height="91" uuid="ded2514a-fe36-45c0-bb6f-7b5cd33957d9"/>
+				<imageExpression><![CDATA["C:\\Users\\Fachmi Farizh\\Documents\\NetBeansProjects\\GorPKP\\report\\logo-dki-jakarta-1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="10" width="179" height="20" uuid="742c0302-2e78-4802-9105-4416b3885093"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PEMBATALAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="42" width="100" height="20" uuid="1775f8d9-0aec-477c-bc81-5d37124354ca"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[NAMA PETUGAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="42" width="5" height="20" uuid="b74b471a-c671-413d-809f-53ba2bc51883"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="126" y="42" width="100" height="20" uuid="8fbb234e-3540-47c8-98d7-ebf1556a779c"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="62" width="100" height="20" uuid="9a6f5df9-e805-4771-b34a-d028fbc12b4b"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_id_pembatalan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="62" width="100" height="20" uuid="31d67ef2-c615-4357-942e-dfd2c27a666d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[KODE PEMBATALAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="62" width="5" height="20" uuid="a1638ffb-8d8f-4664-b92b-9c59c88a5b7e"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="26" y="10" width="100" height="20" uuid="4f8709ed-718e-445f-8a27-05112d939955"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PEMESANAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="10" width="100" height="20" uuid="4d5d1646-6804-4eb5-b5e6-4fee41742acd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA PEMESAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="10" width="100" height="20" uuid="723ac9d9-c840-477a-9a97-5810b29161d7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="10" width="100" height="20" uuid="77f44427-f627-4a5a-813f-fc3c534a077f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FASILITAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="10" width="100" height="20" uuid="96830d5b-9b31-4111-b4f8-539ba35858e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KETERANGAN BATAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="26" y="9" width="498" height="1" uuid="e6f90d03-1b96-4b7a-8eb0-5ce1b555922d"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="1" width="100" height="20" uuid="701c288e-ea1e-4d29-a126-478d63b17cb4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_idpemesanan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="26" y="0" width="498" height="1" uuid="e16a7205-e727-4743-bcf5-794328a5f4a4"/>
+			</line>
+			<textField>
+				<reportElement x="126" y="1" width="100" height="20" uuid="071b8470-68de-4c67-b3e8-abbfeba49a7b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_nama_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="1" width="98" height="20" uuid="06145cbd-e034-46f2-8a7c-e119be65676d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_telefon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="1" width="100" height="20" uuid="af0037c3-6c00-4ad5-9bf2-a80117e30d2c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_fasilitas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="1" width="100" height="20" uuid="ee7aba94-09e5-4b6c-920e-8b7529bd03f9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pembatalan_keterangan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="26" y="20" width="498" height="1" uuid="af65e95d-a0c6-44f5-96bb-1cb2e8b9decd"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="370" y="15" width="100" height="20" uuid="424de985-d0d4-435c-82f4-1453b81b9658"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="98" width="107" height="20" uuid="591fd4dd-82d4-4beb-8831-07301a41628d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[(..........SURYA..........)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="28" width="100" height="20" uuid="74edce29-3e26-42ef-8610-c769b351a09e"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Admin GOR PKP]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="408" y="15" width="100" height="20" uuid="9e973365-c227-4721-92e5-c26b4778dff9"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

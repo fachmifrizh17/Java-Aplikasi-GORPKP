@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lap.gudang" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fab5edfa-0452-4100-b2e0-65caa8cff074">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     gudang.`kode_barang` AS gudang_kode_barang,
+     gudang.`nama_barang` AS gudang_nama_barang,
+     gudang.`status` AS gudang_status
+FROM
+     `gudang` gudang]]>
+	</queryString>
+	<field name="gudang_kode_barang" class="java.lang.String"/>
+	<field name="gudang_nama_barang" class="java.lang.String"/>
+	<field name="gudang_status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<line>
+				<reportElement x="119" y="28" width="316" height="1" uuid="0f9c844e-ac02-4f1d-b77c-23d17c14a754"/>
+			</line>
+			<staticText>
+				<reportElement x="114" y="0" width="326" height="29" uuid="69a39979-1ea6-42dd-9797-43d776a5f40a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[GELANGGANG REMAJA PKP]]></text>
+			</staticText>
+			<image>
+				<reportElement x="440" y="-10" width="113" height="91" uuid="482e7b6c-7809-4816-86bd-271473de59b9"/>
+				<imageExpression><![CDATA["C:\\Users\\Fachmi Farizh\\Documents\\NetBeansProjects\\GorPKP\\report\\logo-dki-jakarta-1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="227" y="52" width="125" height="20" uuid="aea26662-dc80-4e00-a218-b005cd91db50"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Telepon: (021) 87704066]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="42" width="244" height="20" uuid="5174a350-1fe3-47a5-8595-b20dca66b759"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13730]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="30" width="301" height="20" uuid="ba25d7d6-0c41-4c23-bc27-708207698a23"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jl. Raya Pkp No.48, RT.1/RW.8, Klp. Dua Wetan, Kec. Ciracas, Kota]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="90" width="555" height="1" uuid="015c758e-d487-423b-801a-97d3fdb77134"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="94" width="555" height="1" uuid="3d04d4e2-ea17-4b8a-b390-196837923b6b"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="179" y="0" width="202" height="20" uuid="ab177143-be7e-4d14-ac7d-e74ca0c2d855"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BARANG GUDANG]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="41" width="100" height="20" uuid="ca425914-1e58-4689-8d20-efd368064ef2"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="41" width="100" height="20" uuid="5263445b-f169-499c-bbe6-5145b9ccd7e5"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="41" width="100" height="20" uuid="1817b959-7b22-4618-b0c8-1f6918a6f5b1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS BARANG]]></text>
+			</staticText>
+			<line>
+				<reportElement x="129" y="40" width="300" height="1" uuid="cf6d58be-1b38-4959-b754-cdeb4fee7a8e"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement x="129" y="0" width="300" height="1" uuid="5fc50620-f451-4a2a-8c2d-1731c41b2c4b"/>
+			</line>
+			<line>
+				<reportElement x="129" y="21" width="300" height="1" uuid="a2c108d3-1fe9-40dd-bb0a-ec2576ec4019"/>
+			</line>
+			<textField>
+				<reportElement x="129" y="0" width="100" height="20" uuid="fda7da55-8913-41ad-be37-752024f5a840"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{gudang_kode_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="0" width="100" height="20" uuid="fd921c96-123e-43e5-969f-cdf67fcb83c8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{gudang_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="0" width="100" height="20" uuid="3f31d09e-b15d-40eb-ab0c-3d66207f9fe1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{gudang_status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="119" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="429" y="0" width="100" height="20" uuid="326a004f-5d75-4681-a552-8a69da0739c6"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="391" y="0" width="100" height="20" uuid="367ace9a-0a5c-4473-a05c-9a2dab6d62e6"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="13" width="100" height="20" uuid="8ba532b9-7bb1-4f93-981a-709a6932cc00"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Admin GOR PKP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="83" width="107" height="20" uuid="c45650d2-1484-4d00-9ebd-639abf471ea9"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[(..........SURYA..........)]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

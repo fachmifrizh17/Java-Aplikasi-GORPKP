@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="struk" language="groovy" pageWidth="226" pageHeight="431" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="aaf7be79-1e9a-4062-ba5d-20b8a0edbe03">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     transaksi.`tanggal` AS transaksi_tanggal,
+     transaksi.`idpemesanan` AS transaksi_idpemesanan,
+     transaksi.`idpenyewa` AS transaksi_idpenyewa,
+     transaksi.`fasilitas` AS transaksi_fasilitas,
+     transaksi.`total` AS transaksi_total,
+     transaksi.`bayar` AS transaksi_bayar,
+     transaksi.`kembali` AS transaksi_kembali
+FROM
+     `transaksi` transaksi
+where
+idpemesanan LIKE '%$P!{id}%']]>
+	</queryString>
+	<field name="transaksi_tanggal" class="java.lang.String"/>
+	<field name="transaksi_idpemesanan" class="java.lang.String"/>
+	<field name="transaksi_idpenyewa" class="java.lang.String"/>
+	<field name="transaksi_fasilitas" class="java.lang.String"/>
+	<field name="transaksi_total" class="java.lang.Integer"/>
+	<field name="transaksi_bayar" class="java.lang.Integer"/>
+	<field name="transaksi_kembali" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="33" uuid="948d35e5-6502-4896-90c7-f06e1b9aa790"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STRUK PENYEWAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="186" height="20" uuid="cd447d0d-8c13-4612-8cb7-d9684787958a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="20" uuid="d19c0a14-9f6e-4c9c-a13f-a216468fab6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="10" width="186" height="33" uuid="ee1def28-4914-4a65-9060-407a91f513be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOR PKP]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="67" y="0" width="100" height="20" uuid="59f28965-3680-45d3-9824-ba7af1aefcc0"/>
+				<textFieldExpression><![CDATA[$F{transaksi_tanggal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="21" width="76" height="20" uuid="edf77593-c074-4cc9-b630-f92f781504c3"/>
+				<text><![CDATA[ID PEMESANAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="21" width="100" height="20" uuid="51afc0a8-30c9-4290-aafe-50cec1a2ebb1"/>
+				<textFieldExpression><![CDATA[$F{transaksi_idpemesanan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="109" y="0" width="77" height="27" uuid="968d328d-67c2-4b31-9b63-eb36e02a4d4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Fasilitas]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="27" width="186" height="1" uuid="4c3e721d-bfbf-4289-b196-1c3c8607a2d1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="186" height="1" uuid="d5503aa6-e5c2-4538-9291-887c987ad6ea"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="77" height="27" uuid="f9a8229e-b9d1-428f-be20-6f8ec814d08e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Penyewa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="76" height="20" uuid="30fe6f2f-0e30-4912-bb18-1cfc163a1de7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_idpenyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="0" width="78" height="20" uuid="f707e3f5-2e7e-4f5d-9659-343fffa4e7d7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{transaksi_fasilitas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="186" height="14" uuid="ac58f52c-dfb4-48e4-949e-c58bf6387b85"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="20" uuid="bce413b1-b771-48ae-b293-c2390df17341"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="34" width="22" height="20" uuid="a33d8973-9439-4b76-a2b5-54d963931f22"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Rp,-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="34" width="43" height="20" uuid="9e65654c-6004-4138-a29e-8664b3141f35"/>
+				<textFieldExpression><![CDATA[$F{transaksi_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="107" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="14" uuid="77ac13ab-08ea-4763-a8a8-00c55d789cec"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="44" width="186" height="20" uuid="f4615574-3dc6-4921-a292-dc2cd9a8277c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="92" width="186" height="15" uuid="e27fd9dd-49f1-4f58-9d02-02bd54a5b79b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[=================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="14" width="22" height="20" uuid="af1a1a1f-f9d1-49d7-95a1-2776fb4ad4f4"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Rp,-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="54" width="22" height="20" uuid="51bb15dd-fbe9-49eb-adc6-d506943c08b4"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Rp,-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="87" width="84" height="20" uuid="dbe26301-a582-41e0-a44b-cb7e85d07978"/>
+				<textElement>
+					<font fontName="Times New Roman" size="5"/>
+				</textElement>
+				<text><![CDATA[*Harap simpan bukti pembayaran ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="92" width="83" height="8" uuid="95c2c1bf-cd00-47d0-aa02-08421721648a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="5"/>
+				</textElement>
+				<text><![CDATA[jika ingin melakukan pembatalan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="14" width="43" height="20" uuid="d0583893-0b52-4801-a574-e8257db8d32a"/>
+				<textFieldExpression><![CDATA[$F{transaksi_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="54" width="43" height="20" uuid="d2ce68cf-438e-43c8-94a2-050d3932061d"/>
+				<textFieldExpression><![CDATA[$F{transaksi_kembali}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="54" splitType="Stretch"/>
+	</summary>
+</jasperReport>
